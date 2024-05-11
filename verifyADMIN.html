@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Journey Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+
+<body>
+    <video autoplay muted loop id="video-background">
+        <source src="Background3.mp4" type="video/mp4">
+         Your browser does not support the video tag.
+        </video>
+    <header class="video-content">
+        <a href="HomePage.html" class="logo">Cyber Journey</a>
+    </header>
+
+    <section class="MainHomepage">
+    <div class="MainHomepage-content">
+        <div class="form-box">
+            <h1 id="title">Verify ADMIN </h1>
+            <form method="post" action="verify.php">
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="text" placeholder="Enter Admin ID" name="id" required>
+                    </div>
+    
+                </div>
+                <div class="btn-field" style="margin-left: 90px;">
+                    <button type="submit">verify</button>
+                </div>
+
+                <div class="btn-field" style="margin-left: 90px;">
+                    <button type="link"><a style="color: #fff;" href="HomePage.html">Back</a></button>
+
+                </div>
+            </form>
+        <span class="home-imgHover"></span>
+    </div>
+    </section>
+    
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="sign.css">
+    <script src="https://kit.fontawesome.com/ab3520cc60.js" crossorigin="anonymous"></script>
+    <script>
+        
+        function validateForm() {
+            var email = document.getElementById('mail').value;
+            var nameRegex = /^[a-zA-Z]+$/;
+        if(!(email.endsWith("@gmail.com") || email.endsWith("@outlook.com")|| email.endsWith("@hotmail.com")|| email.endsWith("@iau.edu.sa")))
+        {
+            document.getElementById('error').innerHTML = 'Please enter valid domain for the e-mail , example@gmail.com';
+                return false;
+        }
+        
+
+            return true;
+        }
+    </script>
+
+</head>
+<body>
+    <video autoplay muted loop id="video-background">
+        <source src="Background3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+        <section class="MainHomepage">
+            <div class="MainHomepage-content">
+         <div class="MainHomepage-container">
+                <div class="form-box">
+                    <h1 id="title"> Login </h1>
+                    <form method="post" action="signin.php" id="form" onsubmit="return validateForm()">
+                        <div class="input-group">
+                            <div class="input-field">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" placeholder="Enter E-mail" name="email" id="mail" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" placeholder="Enter Password " name="password" id="pass" required>
+                            </div>
+                        </div>
+    
+                        <div class="btn-field">
+                            <button type="link"><a style="color: #fff;" href="signup.html">Sign up</a></button>
+                            <button type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+    </section>
+</body>
+
+</html>

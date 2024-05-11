@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP </title>
+    <link rel="stylesheet" href="sign.css">
+    <style>
+        /* Added CSS */
+        .radioBtn label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .radioBtn input[type="radio"] {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/ab3520cc60.js" crossorigin="anonymous"></script>
+    <script>
+        function validateForm() {
+            var fname = document.getElementById('Fname').value;
+            var lname = document.getElementById('Lname').value;
+            var email = document.getElementById('mail').value;
+            var password = document.getElementById('pass').value;
+            var nameRegex = /^[a-zA-Z]+$/;
+
+            if (!nameRegex.test(fname) || !nameRegex.test(lname)) {
+                document.getElementById('error').innerHTML = 'Invalid input. Please enter alphabetic characters only For The name ';
+                return false;
+            }
+
+            
+        if(!(email.endsWith("@gmail.com") || email.endsWith("@outlook.com")|| email.endsWith("@hotmail.com")|| email.endsWith("@iau.edu.sa")))
+        {
+            document.getElementById('error').innerHTML = 'Please enter valid domain for the e-mail , example@gmail.com';
+                return false;
+        }
+           if( pass.value.length < 7){
+            document.getElementById('error').innerHTML = 'Password Too short , Should be 8 chars or more';
+            return false;
+            // messages.push('Password Too short , Should be 8 chars or more')
+        }
+        if (!pass.value.match(/[a-zA-Z]/)){
+            document.getElementById('error').innerHTML = 'Password Should include 1 char or more';
+            return false;
+                // messages.push('Password Must Include At Least ONE Letter')
+            }
+       if (!pass.value.match(/[0-9]/) ){
+                // messages.push('Password Must Include At Least ONE Number')
+                document.getElementById('error').innerHTML = 'Password Should include 1 Digit or more';
+                return false;
+            }
+            
+
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <video autoplay muted loop id="video-background">
+        <source src="Background3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+    <div class="form-box">
+        <h1 id="title">Sign Up</h1>
+        <div style="font-size: small; color: rgb(236, 20, 20); background-color:  rgb(237, 237, 237); border-color: rgb(0, 0, 0);" id="error"></div>
+        <form method="post" action="signup.php" id="form" onsubmit="return validateForm()">
+            <div class="input-group">
+                <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Enter First name" name="firstname" id="Fname" required>
+                    <small></small>
+                </div>
+
+                <div class="input-field" id="Lname">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Enter Last name" name="lastname" id="Lname" required>
+                </div>
+
+                <div class="radioBtn" id="Gen">
+                    <i class="fa-solid fa-person-half-dress"> Gender: </i>
+                    <label for="gender">
+                        <label for="male"><input type="radio" name="gender" value="M" id="male" required>Male</label><label for="female"><input type="radio" name="gender" value="F" id="female" required>Female</label>
+
+                    </label>
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Enter E-mail" name="email" id='mail' required>
+                    <small id="msg"></small>
+
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Enter Password " name="password" id="pass" required>
+                    <small></small>
+                </div>
+
+
+            </div>
+            <div class="btn-field">
+                <button type="link"><a style="color: #fff;" href="HomePage.html">Back</a></button>
+                <button type="submit">Sign up</button>
+
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
