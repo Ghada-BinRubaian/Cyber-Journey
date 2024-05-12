@@ -71,7 +71,7 @@ $total_Internship = $select_Internship->rowCount();
                     }
                 }
             else{
-              echo '<h2 class="empty">no courses added yet!</h2>';
+              echo '<h2 class="empty">no Internship added yet!</h2>';
             }
             ?>
 			</div>
